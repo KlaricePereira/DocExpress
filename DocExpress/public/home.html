@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        /* Menu de navegação */
+        .navbar {
+            background-color: #133d63;
+            padding: 10px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .navbar-brand {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .navbar-brand img {
+            height: 30px;
+            width: 30px;
+            margin-right: 10px;
+            object-fit: contain;
+        }
+
+        .navbar .nav-link {
+            color: #fff !important;
+            font-weight: bold;
+            margin-left: 10px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .nav-link:hover {
+            background-color: #174872;
+        }
+
+        /* Conteúdo principal */
+        .container {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #133d63;
+        }
+
+        h5 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #000000;  
+        }
+
+        /* Carrossel */
+        .carrossel-container {
+            position: relative;
+            width: 80%;
+            overflow: hidden;
+        }
+
+        .carrossel {
+            display: flex;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .carrossel-item {
+            min-width: calc(100% / 3);
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .carrossel-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .carrossel-item .title {
+            margin-top: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #000;
+            text-transform: uppercase;
+        }
+
+        .carrossel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1000;
+            padding: 10px;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .carrossel-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .carrossel-btn.left {
+            left: 10px;
+        }
+
+        .carrossel-btn.right {
+            right: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            /* Exibe as imagens na vertical (sem carrossel) em telas pequenas */
+            .carrossel-container {
+                display: block; /* Remove o carrossel e coloca as imagens em bloco */
+            }
+
+            .carrossel {
+                display: block; /* Organiza as imagens em blocos verticais */
+            }
+
+            .carrossel-item {
+                width: 100%; /* As imagens ocupam 100% da largura */
+                margin-bottom: 20px; /* Espaçamento entre as imagens */
+            }
+
+            /* Estilo das setas no carrossel, se necessário */
+            .carrossel-btn {
+                display: none; /* Remove as setas em telas pequenas */
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Estilo para dispositivos maiores */
+        @media (min-width: 769px) {
+            .carrossel-item {
+                min-width: calc(100% / 3);
+            }
+        }
+        @media (max-width: 768px) {
+    h1 {
+        font-size: 20px;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <!-- Menu de navegação -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+            <img src="img/icone.png" alt="Ícone">
+            DocExpress
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="background-color: #fff; width: 25px; height: 3px; display: block; margin: 5px 0;"></span>
+            <span class="navbar-toggler-icon" style="background-color: #fff; width: 25px; height: 3px; display: block; margin: 5px 0;"></span>
+            <span class="navbar-toggler-icon" style="background-color: #fff; width: 25px; height: 3px; display: block; margin: 5px 0;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Sair</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <div class="container">
+        <h1><b>Crie seus documentos Particulares com Facilidade!</b></h1>
+        <h5>Após selecionar o modelo e preencher o formulário o PDF estará pronto para reconhecimento de firma em cartório</h5>
+        <div class="carrossel-container">
+            <button class="carrossel-btn left" id="btn-left">&#10094;</button>
+            <div class="carrossel" id="carrossel">
+                <div class="carrossel-item">
+                    <a href="/autorizacao_acomp">
+                        <img src="img/autorizacao1.png" alt="Autorização Acompanhado">
+                    </a>
+                    <div class="title">Autorização de Viagem Acompanhado</div>
+                </div>
+                <div class="carrossel-item">
+                    <a href="/autorizacao">
+                        <img src="img/autorizacao2.png" alt="Autorização Desacompanhado">
+                    </a>
+                    <div class="title">Autorização de Viagem Desacompanhado</div>
+                </div>
+                <div class="carrossel-item">
+                    <a href="/hospedagem">
+                        <img src="img/hospedagem.png" alt="Hospedagem">
+                    </a>
+                    <div class="title">Autorização para Hospedagem</div>
+                </div>
+                <div class="carrossel-item">
+                    <a href="/residencia">
+                        <img src="img/declaracao.png" alt="Declaração de Residência">
+                    </a>
+                    <div class="title">Declaração de Residência</div>
+                </div>
+                <div class="carrossel-item">
+                    <a href="/auto_residencia">
+                        <img src="img/auto.png" alt="Auto Declaração">
+                    </a>
+                    <div class="title">Auto Declaração de Residência</div>
+                </div>
+                <div class="carrossel-item">
+                    <a href="/trabalho_autonomo">
+                        <img src="img/trabalho.png" alt="Trabalho Autônomo">
+                    </a>
+                    <div class="title">Declaração de Trabalho Autônomo</div>
+                </div>
+                <div class="carrossel-item">
+                    <a href="/termo_quitacao">
+                        <img src="img/quitacao.png" alt="Termo de Quitação">
+                    </a>
+                    <div class="title">Termo de Quitação</div>
+                </div>
+                <div class="carrossel-item">
+                    <a href="/recibo_pagamento">
+                        <img src="img/recibo.png" alt="Recibo de Pagamento">
+                    </a>
+                    <div class="title">Recibo de Pagamento</div>
+                </div>
+                <div class="carrossel-item">
+                    <a href="/uniao_estavel">
+                        <img src="img/uniao.png" alt="União Estável">
+                    </a>
+                    <div class="title">União Estável Particular</div>
+                </div>
+            </div>
+            <button class="carrossel-btn right" id="btn-right">&#10095;</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="home.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+    </html>
+</body>
+
+</html>

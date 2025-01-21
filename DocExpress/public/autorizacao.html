@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autorização de Viagem</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        .navbar {
+            background-color: #133d63;
+            padding: 10px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .navbar-brand {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .navbar-brand img {
+            height: 30px;
+            width: 30px;
+            margin-right: 10px;
+            object-fit: contain;
+        }
+
+        .navbar .nav-link {
+            color: #fff !important;
+            font-weight: bold;
+            margin-left: 10px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar .nav-link:hover {
+            background-color: #174872;
+        }
+
+
+        /* Container principal */
+        .container {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+    h1 {
+        font-size: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+            <img src="img/icone.png" alt="Ícone"> <!-- Caminho da imagem -->
+            DocExpress
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="background-color: #fff; width: 25px; height: 3px; display: block; margin: 5px 0;"></span>
+            <span class="navbar-toggler-icon" style="background-color: #fff; width: 25px; height: 3px; display: block; margin: 5px 0;"></span>
+            <span class="navbar-toggler-icon" style="background-color: #fff; width: 25px; height: 3px; display: block; margin: 5px 0;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Sair</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- Conteúdo principal -->
+<div class="content">
+    <h1>Autorização de Viagem Para Menor Desacompanhado</h1>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="responsavel_nome">Nome do Responsável:</label>
+                    <input type="text" class="form-control" id="responsavel_nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="responsavel_nacionalidade">Nacionalidade:</label>
+                    <input type="text" class="form-control" id="responsavel_nacionalidade" required>
+                </div>
+                <div class="form-group">
+                    <label for="responsavel_rg">RG:</label>
+                    <input type="text" class="form-control" id="responsavel_rg" required maxlength="12">
+                </div>
+                <div class="form-group">
+                    <label for="responsavel_cpf">CPF:</label>
+                    <input type="text" class="form-control" id="responsavel_cpf" required maxlength="14">
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" class="form-control" id="endereco" required>
+                </div>
+                <div class="form-group">
+                    <label for="numero">Número:</label>
+                    <input type="text" class="form-control" id="numero" required>
+                </div>
+                <div class="form-group">
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" class="form-control" id="bairro" required>
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" class="form-control" id="cidade" required>
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <input type="text" class="form-control" id="estado" required>
+                </div>
+                <div class="form-group">
+                    <label for="menor_nome">Nome do Menor:</label>
+                    <input type="text" class="form-control" id="menor_nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="menor_cpf">CPF do Menor:</label>
+                    <input type="text" class="form-control" id="menor_cpf" required maxlength="14">
+                </div>
+                <div class="form-group">
+                    <label for="destino">Destino:</label>
+                    <input type="text" class="form-control" id="destino" required>
+                </div>
+                <div class="form-group">
+                    <label for="data_inicio">Data de Início:</label>
+                    <input type="date" class="form-control" id="data_inicio" required>
+                </div>
+                <div class="form-group">
+                    <label for="data_fim">Data de Fim:</label>
+                    <input type="date" class="form-control" id="data_fim" required>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="checkbox_termos" required>
+                    <label class="form-check-label" for="checkbox_termos">Autorizo o uso dos meus dados pessoais para a geração deste documento.</label>
+                </div>
+                <button type="button" class="btn btn-dark" id="gerarPDF">Gerar PDF</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="autorizacao.js"></script> 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

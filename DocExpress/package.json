@@ -1,0 +1,30 @@
+{
+    "name": "cartorio",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "author": "Seu Nome",
+    "license": "ISC",
+    "description": "Um projeto para um cartório digital utilizando Node.js e MySQL",
+    "keywords": [
+        "cartório",
+        "digital",
+        "Node.js",
+        "MySQL"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/seu-usuario/seu-repositorio"
+    },
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.20.3",
+        "ejs": "^3.1.10",
+        "express": "^4.21.1",
+        "express-session": "^1.18.1",
+        "mysql": "^2.18.1",
+        "sqlite3": "^5.1.7"
+    }
+}
