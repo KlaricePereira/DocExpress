@@ -14,6 +14,6 @@ Funcionalidades
 
 Tecnologias Utilizadas
 
-Frontend: HTML5, CSS, JavaScript, Bootstrap
-Backend: Node.js, Express.js
-Bibliotecas: jsPDF para geração de PDFs
+<p>Frontend: HTML5, CSS, JavaScript, Bootstrap</p>
+<p>Backend: Node.js, Express.js</p>
+<p>Bibliotecas: jsPDF para geração de PDFs</p>
